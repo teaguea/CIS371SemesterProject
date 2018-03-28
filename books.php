@@ -45,15 +45,21 @@
 	   <article>
 	    <section>
 	           <h1>The Reading Corner</h1>
-	            <form>
+	            <form method="post" action="updateBooks.php">
 					Title:
 					<input type="text" name="title" size=60>
 					Author:
 					<input type="text" name="author" size=60>
+					Genre:
+					<input type="text" name="genre" size=60>
+					Release Date:
+					<input type="date" name="rdate">
 					
 					 <textarea rows="8" cols="100" name="bookrev" form="usrform">Enter your review here...</textarea>
 					Reviewer Name:
 					<input type="text" name="reviewer" size=60>
+					<input type="submit" name="submit" value="Submit">
+
 				</form> 
 				
 	   </section>
