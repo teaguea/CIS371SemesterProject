@@ -1,0 +1,67 @@
+{
+  "htmlFiles": [
+    {
+      "fileId": "0B6i7M700QHyqcXVfRXY2NWxsdHM",
+      "contentType": "text/html",
+      "name": "index.html",
+      "path": "0B6i7M700QHyqaFU1LUZtb3lRLVk/"
+    },
+    {
+      "fileId": "0B6i7M700QHyqR3Q1US1PN1ZoOHc",
+      "contentType": "text/html",
+      "name": "about.html",
+      "path": "0B6i7M700QHyqaFU1LUZtb3lRLVk/"
+    },
+    {
+      "fileId": "0B6i7M700QHyqTG81LXBwWHBQR0E",
+      "contentType": "text/html",
+      "name": "books.html",
+      "path": "0B6i7M700QHyqaFU1LUZtb3lRLVk/"
+    },
+    {
+      "fileId": "0B1vYPdy35jyGU3ozN050OVVJME0",
+      "contentType": "text/html",
+      "name": "tvshows.html",
+      "path": "0B6i7M700QHyqaFU1LUZtb3lRLVk"
+    },
+    {
+      "fileId": "0B6i7M700QHyqWmRYdXpUT1JUdDQ",
+      "contentType": "text/html",
+      "name": "soon.html",
+      "path": "0B6i7M700QHyqaFU1LUZtb3lRLVk/"
+    },
+    {
+      "fileId": "0B6i7M700QHyqVFZEdm5mclRtMms",
+      "contentType": "text/html",
+      "name": "movies.html",
+      "path": "0B6i7M700QHyqaFU1LUZtb3lRLVk/"
+    },
+    {
+      "fileId": "0B6i7M700QHyqb3dZQll3MnYybm8",
+      "contentType": "text/html",
+      "name": "buy.html",
+      "path": "0B6i7M700QHyqaFU1LUZtb3lRLVk/"
+    },
+    {
+      "fileId": "1uOgL2WUXROs3fN4y9k_t2QGZaX5TqJTO",
+      "contentType": "text/html",
+      "name": "contact.html",
+      "path": "0B6i7M700QHyqaFU1LUZtb3lRLVk"
+    },
+    {
+      "fileId": "0B6i7M700QHyqaUJ0TG1NOGhhbzQ",
+      "contentType": "text/html",
+      "name": "videogames.html",
+      "path": "0B6i7M700QHyqaFU1LUZtb3lRLVk/"
+    }
+  ],
+  "cssFiles": [
+    {
+      "fileId": "0B6i7M700QHyqU21Ed0NjdWVKdTg",
+      "contentType": "text/css",
+      "name": "style.css",
+      "path": "0B6i7M700QHyqaFU1LUZtb3lRLVk/"
+    }
+  ],
+  "javascriptFiles": []
+}

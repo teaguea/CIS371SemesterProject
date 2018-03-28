@@ -1,0 +1,381 @@
+/* Imported Google Font AD */
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
+/* container styles AD*/ 
+#container {
+        font-family: 'Oxygen', sans-serif;
+        width: 97%;
+		margin-left: auto;
+		margin-right: auto;
+	
+}
+
+
+
+/*header img css -sa*/
+header img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-right:auto;
+    margin-left: auto;
+    margin-bottom: 2%;
+    
+}
+
+/*make sure nothing comes in front of the header*/
+header{
+    z-index:100;
+    margin-bottom: 4em;
+}
+
+/*display menu icon -sa*/
+#menu-icon{
+    display:inline-block;
+    width:30px;
+    height:30px;
+    background: url(../images/small-menu.png) center;
+    
+}
+
+/*nav will pop up over the text, giving more room*/
+nav{
+    position:absolute;
+}
+
+/*hover for icon -sa*/
+nav a:hover#menu-icon{
+    background-color: #FFF;
+    border-radius: 4px 4px 0 0;
+}
+
+/*added nav - ma - AS edited for hamburger menu -SA*/
+nav ul{
+    display:none;
+    border:5px solid #000; 
+    width:50%;
+    border-radius:4px 0 4px 4px;
+    background-color: #434343;
+    padding: .001em /* 3em*/;
+    margin: 0;
+    font-family: Georgia, "times new roman", Serif;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    min-width:200px;
+    
+}
+
+
+nav li{
+    text-align:center;
+    padding: 10px 0;
+    margin:0;
+}
+
+nav:hover ul{
+    display: block;
+}
+
+
+
+
+/*bg for page SA*/
+body{
+   	background-color: #CDDCDC;
+    background-image: -webkit-gradient(linear, 0 100%, 0 0, from(rgba(255,255,255,0.25)), to(rgba(0,0,0,0.25)));
+	background-image: -webkit-linear-gradient(rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%);
+	background-image: -moz-linear-gradient(rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%);
+	background-image: -o-linear-gradient(rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%);
+	background-image: radial-gradient(at 50% 100%, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), linear-gradient(rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%);
+	background-blend-mode: screen, overlay;
+}
+
+
+/* First letter of title headings float AD*/
+.floatletter {
+		float: left;
+		width: 0.7em;
+		font-size: 250%;
+		font-family: algerian, courier, sans-serif;
+		line-height: 25%;
+		
+}
+
+
+h1{
+    font-size: 2.5em;
+}
+
+h4{
+    margin-top: -2em; margin-left: 10%;
+}
+
+/* added a class to make stuff italic - sa*/
+.italic{
+    font-style: italic;
+}
+/*underline ma*/
+.underline {
+    text-decoration: underline;
+}
+.desktop{
+    display:none;
+}
+
+
+/*hide bullet points - sa*/
+nav ul li{
+    list-style-type: none;
+    
+}
+
+nav li a:link {
+    color: #DF175D;
+}
+
+nav li a:visited {
+    color: #FFFFFF;
+}
+
+/*added nav ul - ma - AS */
+nav ul li a{
+    margin:0;
+    padding-left: 0.50%;
+    padding-right: 0.50%;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #FAFAFC;
+    list-style-type: none;
+    border-style: none;
+    box-shadow: 0.5em 0.5em 1em #404040;
+    margin-bottom: .5em;
+    margin-top: .5em;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    border-radius: 0;
+    width: 15%;
+    
+}
+
+nav ul{
+    max-width:100%;
+}
+
+/*hide aside class in mobile -sa*/
+aside{
+    display:none;
+}
+
+/*style the contact us button -sa*/
+.button{
+    background-color:#434343; 
+    text-decoration:none;
+    color:#FAFAFC;
+    padding: .5em .5em;
+    border: .125em solid #000;
+}
+
+/*shows the contact us button on mobile -sa*/
+.contact{
+    margin-top: 2em;
+    margin-bottom: 1em;
+    display: block;
+}
+
+/*added footer - ma */
+footer {
+    clear: left;
+    text-align: center;
+   
+}
+
+/*added article ul li - ma*/
+article ul li {
+    background-color: #DF175D;
+    list-style-type: none;
+    border-radius: .2em;
+    padding: .2em;
+    margin: .2em;
+    
+}
+/*added article ul li a - ma */
+article ul li a {
+    color: #FAFAFC;
+    text-decoration: none;
+}
+
+/*Style for the form - AS */
+/*Style for form*/
+
+/*style for fieldset */
+fieldset {padding: 0.25em; margin: 0.25em;}
+
+/*Style rule for input, select, and textarea form elements*/
+input, select, textarea {display: block; margin-bottom: 1em;}
+
+/*Style rule for label element */
+label {display: block; padding: 0.25em;}
+
+/*Style rule for unordered list within a form */
+form ul {list-style-type: none;}
+
+/*Style rule for chkbox class */
+.chkbox{display: inline; padding: 0.25em; margin: 0.25em;}
+
+/*Style for legend*/
+legend {font-size: 1em; font-weight: bold;}
+
+/*style for submit and reset button */
+.btn {display: inline; padding: 0.25em; margin: 0.25em;}
+
+/*Style for drop down selector */
+.select1 {display: inline;}
+
+
+@media only screen and (min-width: 940px) {
+    
+.desktop{
+    display:block;
+} 
+
+.mobile{
+    display:none;
+}
+
+/* better aligns container to the middle of the page AD */
+#container {
+        width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+}
+
+
+/*Animated class for picture gallery - AS
+Moved height and width to css so page will validate - sa*/
+
+.mySlides {
+    margin: auto;
+    padding: 10px;
+    max-height: 75%;
+    width: auto;
+}
+
+
+
+
+.slideshow {
+    height: 400px;
+    width: 100%;
+}
+
+
+
+ /*style for psuedo class - AS*/
+ 
+nav a {
+    padding: 0.5em;
+}
+
+nav a:link {
+    color: #DF175D;
+}
+
+nav a:visited {
+    color: #FFFFFF;
+}
+
+nav a:hover {
+    color: #FFFFFF;
+}
+
+nav a:active {
+    color: #FF0000;
+}
+
+/*hides the menu icon -hamburger menu -sa */
+#menu-icon{
+    display: none;
+}
+
+/*nav jumps back to regular - sa*/
+nav{
+    position: relative;
+}
+/*redisplays nav options for desktop -sa*/
+nav ul{
+    display: inline-block; width: 100%;
+    border: none;
+
+}
+
+/*keeps all the nav options inline for desktop viewport - sa*/
+nav ul li{
+    display: inline-block;
+}
+
+
+/*small bar styles -sa, ma*/
+.smallbar{
+    width:15%; 
+    float: left;
+    margin-top: 8%;
+    margin-right: 2%;
+}
+
+/*setting up multi column disp -sa */
+ /*added margin-top, margin-right - ma*/
+section {
+    float: left; 
+    width: 50%;
+    margin-top: 2%;
+    margin-right: 4%;
+}
+
+/* class to line up the second and third reviews - sa*/
+.indent{
+    margin-left: 17%;
+}
+
+/* class to center the text on the index page*/
+.rightindent{
+    margin-right: 17%;
+}
+
+/*styles for img in aside -sa*/
+aside img{
+    max-width: 95%; 
+    height: auto;
+	box-shadow: 7px 7px 4px #888888; /*AD*/    
+}
+
+
+/* adds aside styles to the quotes for reviews AD */
+aside {
+    display:block;
+    float: right; 
+    width: 20%;
+    background-color: #ffffff;
+    border-radius: 0 5em 5em 5em;
+	box-shadow: 1em 1em 1em #4c4f4d;
+	padding: 1.5em;
+	margin-left:2%;
+}
+
+
+/*added footer -ma - AS */
+
+footer {
+    clear: left;
+    text-align: center;
+    
+ 
+}
+
+
+    
+}
