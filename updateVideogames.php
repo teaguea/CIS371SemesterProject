@@ -6,13 +6,11 @@
         <title>MAAS Reviews</title>
         <link href="css/style.css" rel="stylesheet">
         <link rel="icon" href="images/favicon.ico">
-        
     </head>
     <body>
-        <header>
+    <header>
 		<a href="index.html"><img src="images/groupclasslogo.png" alt="MAAS Reviews"></a>
 		
-
 		<!--use the nav area for to add hyperlinks to other pages within the website - ma-->
 		<nav>
     	    <a href="#" id="menu-icon"></a> <!-- For Hamburger menu - SA -->
@@ -26,13 +24,13 @@
     			<li><a href="about.php">About Us</a></li>
     		</ul>
     	</nav>
-		
 	</header>
+		
 	
-
 	
 	<!--use the main area to add the main content of the webpage - ma-->
 	<div id="container">
+	    
 	   <article class="smallbar desktop">
 	        <!--added header 4 - ma-->
 	      <h4>Looking for more information? Click below!</h4>
@@ -41,50 +39,30 @@
 	           <li><a href="soon.html">Coming Soon</a></li>
 	       </ul>
 	   </article>
+	   
 	   <article>
-	   <section>	       
-	       <h1>Movies: Reviewed</h1>
-	      <?php
-			echo "<form>";
-			
-			// Create connection
-			$conn = new mysqli("34.224.83.184","student25","phppass25","student25");
-			// Check connection
-			if ($conn->connect_error) {
-    				die("Connection failed: " . $conn->connect_error);
-			}
-
-			$sql = "SELECT * FROM Movie";
-			$result = $conn->query($sql);
-
-			if ($result->num_rows > 0) {
-    				// output data of each row
-    				while($row = $result->fetch_assoc()) {
-        				echo "<h4>Title: $row[Title] Director: $row[Director] Writer: $row[Writer]  Genre: $row[Genre] <br> $row[Review] <br> Reviewer: $row[Rname]</h4> <br><br>";
+	       <section>
+	       <h1>Gaming Reviews</h1>
+		   
+	       <form method="post" action="submitVideogames.php">
+					Title:
+					<input type="text" name="title" size=60>
+					Publisher:
+					<input type="text" name="company" size=60>
+					Genre:
+                                        <input type="text" name="genre" size=60>
 					
-    				}
-			} else {
-    				echo "0 results";
-			}
-			$conn->close();
-			echo "</form>";
-		?> 
-	       
-	   
-	   
-	      
-	       
-	   </section>    
+					 <textarea rows="8" cols="100" name="vgrev">Enter your review here...</textarea>
+					Reviewer Name:
+					<input type="text" name="reviewer" size=60>
+					<input type="submit" name="submit" value="Submit">
+				</form>
+	       </section>
 	   </article>
-	   
 	   <aside class="contact">
 	           <a href="contact.html" class="button">Contact Us!</a>
 	   </aside>
 	   
-	    <aside class="contact">
-                   <a href="updateMovies.php" class="button">Submit Review!</a>
-           </aside>
-
 	   
 	</div> <!--End container-->
 	

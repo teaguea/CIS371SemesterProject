@@ -1,0 +1,54 @@
+Book
+
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| BookID | int(11)      | NO   | PRI | NULL    | auto_increment |
+| Name   | varchar(255) | YES  |     | NULL    |                |
+| Author | varchar(255) | YES  |     | NULL    |                |
+| Genre  | varchar(255) | YES  |     | NULL    |                |
+| Review | varchar(255) | YES  |     | NULL    |                |
+| Rname  | varchar(255) | YES  |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
+
+
+Movie
+
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| MovieID  | int(11)      | NO   | PRI | NULL    | auto_increment |
+| Title    | varchar(255) | YES  |     | NULL    |                |
+| Director | varchar(255) | YES  |     | NULL    |                |
+| Writer   | varchar(255) | YES  |     | NULL    |                |
+| Genre    | varchar(255) | YES  |     | NULL    |                |
+| Review   | varchar(255) | YES  |     | NULL    |                |
+| Rname    | varchar(255) | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+
+Videogame
+
++---------+--------------+------+-----+---------+----------------+
+| Field   | Type         | Null | Key | Default | Extra          |
++---------+--------------+------+-----+---------+----------------+
+| BookID  | int(11)      | NO   | PRI | NULL    | auto_increment |
+| Title   | varchar(255) | YES  |     | NULL    |                |
+| Company | varchar(255) | YES  |     | NULL    |                |
+| Genre   | varchar(255) | YES  |     | NULL    |                |
+| Review  | varchar(255) | YES  |     | NULL    |                |
+| Rname   | varchar(255) | YES  |     | NULL    |                |
++---------+--------------+------+-----+---------+----------------+
+
+TV Show
+
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| TVShowID | int(11)      | NO   | PRI | NULL    | auto_increment |
+| Title    | varchar(255) | YES  |     | NULL    |                |
+| Director | varchar(255) | YES  |     | NULL    |                |
+| Writer   | varchar(255) | YES  |     | NULL    |                |
+| Genre    | varchar(255) | YES  |     | NULL    |                |
+| Review   | varchar(255) | YES  |     | NULL    |                |
+| Rname    | varchar(255) | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+

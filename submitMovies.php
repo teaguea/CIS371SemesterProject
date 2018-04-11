@@ -42,35 +42,36 @@
 	       </ul>
 	   </article>
 	   <article>
-	   <section>	       
+            <section>	       
 	       <h1>Movies: Reviewed</h1>
 	      <?php
-			echo "<form>";
-			
-			// Create connection
-			$conn = new mysqli("34.224.83.184","student25","phppass25","student25");
-			// Check connection
-			if ($conn->connect_error) {
-    				die("Connection failed: " . $conn->connect_error);
-			}
 
-			$sql = "SELECT * FROM Movie";
-			$result = $conn->query($sql);
+        
+	$l=mysqli_connect("34.224.83.184","student25","phppass25","student25");
+        $title = $_POST["title"]; // required
+        $director = $_POST["director"]; // required
+	$writer = $_POST["writer"]; // required
+        $genre = $_POST["genre"]; // required
+        $review = mysqli_real_escape_string($l, $_POST["movierev"]);
+        $reviewer = $_POST["reviewer"]; // required
+	
+	
+	if($title  === "" || $director === "" || $writer === "" || $genre === "" || $review === "" || $reviewer === ""){
+		echo "<h4>You're review wasn't added, please check your information.</h4>";
+	}
+	else {
+		echo "<h3> Thank you $reviewer your review has been added!</h3>";
+		$query = "INSERT INTO Movie(Title,Director,Writer,Genre,Review,Rname) VALUES ('$title', '$director', '$writer', '$genre', '$review', '$reviewer');";
+		mysqli_query($l,$query);
 
-			if ($result->num_rows > 0) {
-    				// output data of each row
-    				while($row = $result->fetch_assoc()) {
-        				echo "<h4>Title: $row[Title] Director: $row[Director] Writer: $row[Writer]  Genre: $row[Genre] <br> $row[Review] <br> Reviewer: $row[Rname]</h4> <br><br>";
-					
-    				}
-			} else {
-    				echo "0 results";
-			}
-			$conn->close();
-			echo "</form>";
-		?> 
+	}
+	
+	
+
+       
+
+?>
 	       
-	   
 	   
 	      
 	       

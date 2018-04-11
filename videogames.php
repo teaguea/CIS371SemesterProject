@@ -20,6 +20,7 @@
     			<li><a href="tvshows.php">TV Shows</a></li>
     			<li><a href="movies.php">Movies</a></li>
     			<li><a href="videogames.php">Video Games</a></li>
+    			<li><a href="analytics.php">Analytics</a></li>
     			<li><a href="about.php">About Us</a></li>
     		</ul>
     	</nav>
@@ -42,22 +43,42 @@
 	   <article>
 	       <section>
 	       <h1>Gaming Reviews</h1>
-		   
-	       <form>
-					Title:
-					<input type="text" name="title" size=60>
-					Publisher:
-					<input type="text" name="director" size=60>
+	       <?php
+			echo "<form>";
+			
+		// Create connection
+			$conn = new mysqli("34.224.83.184","student25","phppass25","student25");
+			// Check connection
+			if ($conn->connect_error) {
+    				die("Connection failed: " . $conn->connect_error);
+			}
+
+			$sql = "SELECT * FROM Videogame";
+			$result = $conn->query($sql);
+
+			if ($result->num_rows > 0) {
+    				// output data of each row
+    				while($row = $result->fetch_assoc()) {
+        				echo "<h4>Title: $row[Title] Publisher: $row[Company] Genre: $row[Genre] <br> $row[Review] <br> Reviewer: $row[Rname]</h4> <br><br>";
 					
-					 <textarea rows="8" cols="100" name="bookrev" form="usrform">Enter your review here...</textarea>
-					Reviewer Name:
-					<input type="text" name="reviewer" size=60>
-				</form>
+    				}
+			} else {
+    				echo "0 results";
+			}
+			$conn->close();
+			echo "</form>";
+		?> 
+		   
+	       
 	       </section>
 	   </article>
 	   <aside class="contact">
-	           <a href="contact.html" class="button">Contact Us!</a>
+	           <a href="contact.php" class="button">Contact Us!</a>
 	   </aside>
+
+	   <aside class="contact">
+                   <a href="updateVideogames.php" class="button">Submit A Review!</a>
+           </aside>
 	   
 	   
 	</div> <!--End container-->

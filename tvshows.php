@@ -20,6 +20,7 @@
     			<li><a href="tvshows.php">TV Shows</a></li>
     			<li><a href="movies.php">Movies</a></li>
     			<li><a href="videogames.php">Video Games</a></li>
+    			<li><a href="analytics.php">Analytics</a></li>
     			<li><a href="about.php">About Us</a></li>
     		</ul>
     	</nav>
@@ -39,24 +40,45 @@
 	   
 	   <article>
 	       <section>
-	       <form>
-					Title:
-					<input type="text" name="title" size=60>
-					Director:
-					<input type="text" name="director" size=60>
-					Writer:
-					<input type="text" name="writer" size=60>
-					
-					 <textarea rows="8" cols="100" name="bookrev" form="usrform">Enter your review here...</textarea>
-					Reviewer Name:
-					<input type="text" name="reviewer" size=60>
-				</form>
+		<h1 align=\"center\">TV Central</h1>
+	        <?php
+                        echo "<form>";
+
+                // Create connection
+                        $conn = new mysqli("34.224.83.184","student25","phppass25","student25");
+                        // Check connection
+                        if ($conn->connect_error) {
+                                die("Connection failed: " . $conn->connect_error);
+                        }
+
+                        $sql = "SELECT * FROM TVShow";
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                                // output data of each row
+                                while($row = $result->fetch_assoc()) {
+                                        
+					echo "<h4>Title: $row[Title] Director: $row[Director]  Writer: $row[Writer]  Genre: $row[Genre] <br> $row[Review] <br> Reviewer: $row[Rname]</h4> <br><br>";
+                                }
+                        } else {
+                                echo "0 results";
+                        }
+                        $conn->close();
+                        echo "</form>";
+                ?>
+                
+
+	       
 				</section>
 		</article>
 	   
 	    <aside class="contact">
-	           <a href="contact.html" class="button">Contact Us!</a>
+	           <a href="contact.php" class="button">Contact Us!</a>
 	   </aside>
+
+	   <aside class="contact">
+                   <a href="updateTVShows.php" class="button">Submit Review!</a>
+           </aside>
 	   
 	   
 	</div> <!-- End Container SA -->

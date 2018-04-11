@@ -6,13 +6,11 @@
         <title>MAAS Reviews</title>
         <link href="css/style.css" rel="stylesheet">
         <link rel="icon" href="images/favicon.ico">
-        
     </head>
     <body>
         <header>
 		<a href="index.html"><img src="images/groupclasslogo.png" alt="MAAS Reviews"></a>
 		
-
 		<!--use the nav area for to add hyperlinks to other pages within the website - ma-->
 		<nav>
     	    <a href="#" id="menu-icon"></a> <!-- For Hamburger menu - SA -->
@@ -26,13 +24,15 @@
     			<li><a href="about.php">About Us</a></li>
     		</ul>
     	</nav>
-		
 	</header>
 	
-
 	
-	<!--use the main area to add the main content of the webpage - ma-->
+	<!--use the container area to add the main content of the webpage - ma-->
 	<div id="container">
+	    <figure>
+	        <!--image added by ma-->
+	        <img src="images/ma/books.jpg" alt="Photo of Books">
+	    </figure>
 	   <article class="smallbar desktop">
 	        <!--added header 4 - ma-->
 	      <h4>Looking for more information? Click below!</h4>
@@ -41,52 +41,54 @@
 	           <li><a href="soon.html">Coming Soon</a></li>
 	       </ul>
 	   </article>
+	   <!--Content by Melissa Allor-->
+	   
 	   <article>
-	   <section>	       
-	       <h1>Movies: Reviewed</h1>
-	      <?php
-			echo "<form>";
-			
-			// Create connection
-			$conn = new mysqli("34.224.83.184","student25","phppass25","student25");
-			// Check connection
-			if ($conn->connect_error) {
-    				die("Connection failed: " . $conn->connect_error);
-			}
+	    <section>
+	           <h1 align=\"center\">TV Central</h1>
+	           
+		<?php
 
-			$sql = "SELECT * FROM Movie";
-			$result = $conn->query($sql);
+        
+	$l=mysqli_connect("34.224.83.184","student25","phppass25","student25");
+        $title = $_POST["title"]; // required
+        $director = $_POST["director"]; // required
+	$writer = $_POST["writer"]; // required
+        $genre = $_POST["genre"]; // required
+        $review = mysqli_real_escape_string($l, $_POST["tvrev"]);
+        $reviewer = $_POST["reviewer"]; // required
+	
+	
+	if($title  === "" || $director === "" || $writer === "" || $genre === "" || $review === "" || $reviewer === ""){
+		echo "<h4>You're review wasn't added, please check your information.</h4>";
+	}
+	else {
+		echo "<h3> Thank you $reviewer your review has been added!</h3>";
+		$query = "INSERT INTO TVShow(Title,Director,Writer,Genre,Review,Rname) VALUES ('$title', '$director', '$writer', '$genre', '$review', '$reviewer');";
+		mysqli_query($l,$query);
 
-			if ($result->num_rows > 0) {
-    				// output data of each row
-    				while($row = $result->fetch_assoc()) {
-        				echo "<h4>Title: $row[Title] Director: $row[Director] Writer: $row[Writer]  Genre: $row[Genre] <br> $row[Review] <br> Reviewer: $row[Rname]</h4> <br><br>";
-					
-    				}
-			} else {
-    				echo "0 results";
-			}
-			$conn->close();
-			echo "</form>";
-		?> 
-	       
+	}
+	
+	
+
+       
+
+?>
+				
+	   </section>
 	   
 	   
-	      
-	       
-	   </section>    
 	   </article>
 	   
-	   <aside class="contact">
-	           <a href="contact.html" class="button">Contact Us!</a>
-	   </aside>
-	   
 	    <aside class="contact">
-                   <a href="updateMovies.php" class="button">Submit Review!</a>
-           </aside>
+	           <a href="contact.php" class="button">Contact Us!</a>
+	   </aside>
 
 	   
-	</div> <!--End container-->
+
+	  
+	   
+	</div> <!-- End Container SA -->
 	
 	<!--use the footer area to add webpage footer content - ma-->
 	<footer>
