@@ -21,7 +21,6 @@
     			<li><a href="tvshows.php">TV Shows</a></li>
     			<li><a href="movies.php">Movies</a></li>
     			<li><a href="videogames.php">Video Games</a></li>
-    			<li><a href="analytics.php">Analytics</a></li>
     			<li><a href="about.php">About Us</a></li>
     		</ul>
     	</nav>
@@ -44,6 +43,73 @@
 	   <!--Info AS-->
 	   
 	   <article>
+	   <?php 
+	   		$l=mysqli_connect("34.224.83.184","student25","phppass25","student25");
+	   		$queryBook = "SELECT Rname FROM Book;";
+			$queryMovie = "SELECT Rname FROM Movie;";
+			$queryVideoGame = "SELECT Rname FROM VideoGame;";
+			$queryTVShow = "SELECT Rname FROM TVShow;";
+			
+			$resultsBook = mysqli_query($l, $queryBook);
+			$resultsMovie = mysqli_query($l, $queryMovie);
+			$resultsVideoGame = mysqli_query($l, $queryVideoGame);
+			$resultsTVShow = mysqli_query($l, $queryTVShow);
+			
+			$reviewerNames = array();
+			while ($row = mysqli_fetch_array($resultsBook)) {
+				if (!in_array($row["Rname"], $reviewerNames)) {
+					array_push($reviewerNames, $row["Rname"]);
+				}
+			}
+			while ($row = mysqli_fetch_array($resultsMovie)) {
+				if (!in_array($row["Rname"], $reviewerNames)) {
+					array_push($reviewerNames, $row["Rname"]);
+				}
+			}
+			while ($row = mysqli_fetch_array($resultsVideoGame)) {
+				if (!in_array($row["Rname"], $reviewerNames)) {
+					array_push($reviewerNames, $row["Rname"]);
+				}
+			}
+			while ($row = mysqli_fetch_array($resultsTVShow)) {
+				if (!in_array($row["Rname"], $reviewerNames)) {
+					array_push($reviewerNames, $row["Rname"]);
+				}
+			}
+			
+			$course_id = "_8_1";
+			$clientURL="http://bb.dataii.com:8080";
+			
+			require_once('classes/Rest.class.php');
+			require_once('classes/Token.class.php');
+			
+			$rest = new Rest($clientURL);
+			$token = new Token();
+			
+			$token = $rest->authorize();
+			$access_token = $token->access_token;
+			
+			$columns = $rest->readGradebookColumns($access_token, $course_id);
+			$c=$columns->results;
+			
+			//print_r($c);
+			//die();
+			foreach($c as $row)
+			{
+				if ($row->name == "Total")
+				{
+					$finalGradeName=$row->name;
+					$finalGradeID=$row->id;
+					$finalPossible=$row->score->possible;
+					break;
+				}
+			}
+			
+			
+			$grades = $rest->readGradebookGrades($access_token, $course_id, $finalGradeID);
+			
+			$g=$grades->results;
+	   ?>
 	       <h2>Welcome to our website!</h2>
 	       <p class="rightindent">
 	           This website was developed with the intentions of reviewing different products from different categories. The categories we have chosen were books, TV shows, movies, and video games. We gave in depth reviews and summaries of each product for each category as well as our own perspective on the product. We incorporated whether or not we would recommend to a friend or peer with links to view and potentially purchase the products from external sites. We worked hard to bring this very enjoyable website to you and our peers, so we hope you enjoy it as much as we do!
@@ -97,6 +163,30 @@
 
 	   
 	</div> <!-- End Container SA -->
+	
+	<div id="container2">
+		<article>
+			<h2>Did you know? This app is used by the famous blackboard students...</h2>
+			<p>
+			<?php 
+			foreach($g as $row)
+			{
+				//echo $row->userId . " has " .$row->score." ouf of ".$finalPossible." points. ";
+				
+				if (empty($_SESSION[$row->userId]))
+				{
+					$user = $rest->readUser($access_token, $row->userId);
+					$_SESSION[$row->userId] = $user->name->given." ".$user->name->family;
+				}
+				if (in_array($_SESSION[$row->userId], $reviewerNames)) {
+					echo $_SESSION[$row->userId];
+				}
+				
+			}
+			?>
+			</p>
+		</article>
+	</div>
 	
 	<!--use the footer area to add webpage footer content - ma-->
 	<footer>

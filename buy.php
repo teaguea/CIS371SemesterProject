@@ -20,7 +20,6 @@
     			<li><a href="tvshows.html">TV Shows</a></li>
     			<li><a href="movies.html">Movies</a></li>
     			<li><a href="videogames.html">Video Games</a></li>
-    			<li><a href="analytics.php">Analytics</a></li>
     			<li><a href="about.html">About Us</a></li>
     		</ul>
     	</nav>

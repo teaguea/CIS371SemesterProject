@@ -22,7 +22,6 @@
     			<li><a href="tvshows.php">TV Shows</a></li>
     			<li><a href="movies.php">Movies</a></li>
     			<li><a href="videogames.php">Video Games</a></li>
-    			<li><a href="analytics.php">Analytics</a></li>
     			<li><a href="about.php">About Us</a></li>
     		</ul>
     	</nav>
