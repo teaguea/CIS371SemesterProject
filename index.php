@@ -9,7 +9,7 @@
     </head>
     <body>
     <header>
-		<a href="index.html"><img src="images/groupclasslogo.png" alt="MAAS Reviews"></a>
+		<a href="index.php"><img src="images/groupclasslogo.png" alt="MAAS Reviews"></a>
 		
 		
 	<!--use the nav area for to add hyperlinks to other pages within the website - ma-->
@@ -35,8 +35,8 @@
 	       <!--added header 4 - ma-->
 	      <h4>Looking for more information? Click below!</h4>
 	       <ul>
-	           <li><a href="buy.html">Buy It Now</a></li>
-	           <li><a href="soon.html">Coming Soon</a></li>
+	           <li><a href="buy.php">Buy It Now</a></li>
+	           <li><a href="soon.php">Coming Soon</a></li>
 	       </ul>
 	   </article>
 	   
@@ -165,7 +165,8 @@
 	</div> <!-- End Container SA -->
 	
 	<div id="container2">
-		<article>
+		<article class="famous people">
+		<center>
 			<h2>Did you know? This app is used by the famous blackboard students...</h2>
 			<p>
 			<?php 
@@ -179,12 +180,13 @@
 					$_SESSION[$row->userId] = $user->name->given." ".$user->name->family;
 				}
 				if (in_array($_SESSION[$row->userId], $reviewerNames)) {
-					echo $_SESSION[$row->userId];
+					echo $_SESSION[$row->userId]."<br>";
 				}
 				
 			}
 			?>
 			</p>
+		</center>
 		</article>
 	</div>
 	
