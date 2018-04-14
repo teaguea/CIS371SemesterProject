@@ -46,7 +46,7 @@
 	            <section>
 	            <h2>Aaron Teague</h2>
 	            
-	            <p>To be written...</p>
+	            <p>Senior studying Computer Science and a big fan of anything to do with pop culture.</p>
 	            </section>
 	            <aside>
 	            </aside>
