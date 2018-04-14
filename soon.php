@@ -9,18 +9,18 @@
     </head>
     <body>
         <header>
-		<a href="index.html"><img src="images/groupclasslogo.png" alt="MAAS Reviews"></a>
+		<a href="index.php"><img src="images/groupclasslogo.png" alt="MAAS Reviews"></a>
 		
 		<!--use the nav area for to add hyperlinks to other pages within the website - ma-->
 		<nav>
     	    <a href="#" id="menu-icon"></a> <!-- For Hamburger menu - SA -->
     	   <ul>
-    			<li><a href="index.html">Home</a></li>
-    			<li><a href="books.html">Books</a></li>
-    			<li><a href="tvshows.html">TV Shows</a></li>
-    			<li><a href="movies.html">Movies</a></li>
-    			<li><a href="videogames.html">Video Games</a></li>
-    			<li><a href="about.html">About Us</a></li>
+    			<li><a href="index.php">Home</a></li>
+    			<li><a href="books.php">Books</a></li>
+    			<li><a href="tvshows.php">TV Shows</a></li>
+    			<li><a href="movies.php">Movies</a></li>
+    			<li><a href="videogames.php">Video Games</a></li>
+    			<li><a href="about.php">About Us</a></li>
     		</ul>
     	</nav>
 		
@@ -84,7 +84,7 @@
     </article>
  
       <aside class="contact">
-	           <a href="contact.html" class="button">Contact Us!</a>
+	           <a href="contact.php" class="button">Contact Us!</a>
 	   </aside>
  
 	</div> <!--End container-->

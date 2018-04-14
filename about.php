@@ -9,7 +9,7 @@
     </head>
     <body>
         <header>
-		<a href="index.html"><img src="images/groupclasslogo.png" alt="MAAS Reviews"></a>
+		<a href="index.php"><img src="images/groupclasslogo.png" alt="MAAS Reviews"></a>
 		
 		<!--use the nav area for to add hyperlinks to other pages within the website - ma-->
 		<nav>
@@ -49,6 +49,7 @@
 	            <p>Senior studying Computer Science and a big fan of anything to do with pop culture.</p>
 	            </section>
 	            <aside>
+	            	<img src="images/at/at.jpg" alt="profile picture">
 	            </aside>
 	            <section>
 	            <h2>Josh Techentin</h2>
@@ -62,7 +63,7 @@
 	       
 	   
 	   <aside class="contact">
-	           <a href="contact.html" class="button">Contact Us!</a>
+	           <a href="contact.php" class="button">Contact Us!</a>
 	   </aside>
 	   
 	</div> <!-- End container -->

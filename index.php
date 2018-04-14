@@ -128,7 +128,6 @@
 	     <img class="mySlides" src="images/ma/bookthief.jpg" alt="The Bookthief">
 	     
 	    
-        <img class="mySlides" src="images/ma/firstfrost.jpg" alt="First Frost">
         
         <img class="mySlides" src="images/ma/13thtale.jpg" alt ="13th Tale">
         <img class="mySlides" src="images/as/jax.jpg" alt="Son's Of Anarchy">
